@@ -15,6 +15,7 @@ Includes minimal modules and a global root with provider aliases.
    terraform -chdir=stacks/prod/core validate
    terraform -chdir=stacks/prod/core plan
    terraform -chdir=stacks/prod/core apply -auto-approve
+   terraform -chdir=stacks/prod/core destory -auto-approve
    ```
 
 > NAT Gateways incur cost. For practice, remove `nat` or set `per_az=false`.

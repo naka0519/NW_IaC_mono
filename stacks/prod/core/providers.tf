@@ -2,7 +2,7 @@
 provider "aws" {
   alias   = "apne1"
   region  = "ap-northeast-1"
-  profile = "yoshi" # TODO: change or replace with assume_role below
+  # profile = "yoshi" # TODO: change or replace with assume_role below
 
   # Alternative:
   # assume_role {
