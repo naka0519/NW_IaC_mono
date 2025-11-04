@@ -57,7 +57,10 @@ prod_core_apne1_vpcs = {
       "private-a" = { cidr = "10.10.32.0/19", az = "ap-northeast-1a" }
       "private-c" = { cidr = "10.10.64.0/19", az = "ap-northeast-1c" }
     }
-    nat  = { per_az = true }
+    nat  = {
+      per_az = true
+      enable = true
+    }
     nacl = {}
   }
 }

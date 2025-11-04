@@ -95,7 +95,10 @@ vpcs = {
       "private-c" = { cidr = "10.10.64.0/19", az = "ap-northeast-1c" }
     }
 
-    nat = { per_az = true }
+    nat = {
+      per_az = true
+      enable = true
+    }
 
     nacl = {
       public = {

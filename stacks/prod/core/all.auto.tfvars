@@ -14,7 +14,10 @@ vpcs = {
         pri-a = { cidr = "10.10.10.0/24", az = "ap-northeast-1a" }
       }
 
-      nat  = { per_az = true }
+      nat = {
+        per_az = false
+        enable = false
+      }
       nacl = {}
       tags = { Name = "main" }
     }
@@ -32,7 +35,10 @@ vpcs = {
   #         pri-a = { cidr = "10.20.10.0/24", az = "ap-northeast-3a" }
   #       }
 
-  #       nat  = { per_az = false }
+  #       nat  = {
+  #         per_az = false
+  #         enable = false
+  #       }
   #       nacl = {}
   #       tags = { Name = "main" }
   #     }

@@ -9,18 +9,21 @@ terraform {
   }
 }
 
-variable "env"           { type = string }
+variable "env" { type = string }
 variable "account_alias" { type = string }
-variable "region"        { type = string }
+variable "region" { type = string }
 
 variable "vpcs" {
   type = map(object({
     cidr            = string
     public_subnets  = map(object({ cidr = string, az = string }))
     private_subnets = map(object({ cidr = string, az = string }))
-    nat             = object({ per_az = bool })
-    nacl            = map(any)
-    tags            = map(string)
+    nat = object({
+      per_az = bool
+      enable = bool
+    })
+    nacl = map(any)
+    tags = map(string)
   }))
 }
 

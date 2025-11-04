@@ -18,4 +18,4 @@ Includes minimal modules and a global root with provider aliases.
    terraform -chdir=stacks/prod/core destory -auto-approve
    ```
 
-> NAT Gateways incur cost. For practice, remove `nat` or set `per_az=false`.
+> NAT Gateways incur cost. For practice, disable them with `nat = { per_az = false, enable = false }`.

@@ -25,6 +25,7 @@ variable "vpcs" {
         }))
         nat = object({
           per_az = bool
+          enable = bool
         })
         nacl = map(any)
         tags = map(string)

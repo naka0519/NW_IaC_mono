@@ -1,5 +1,5 @@
 locals {
-  config_enabled = try(var.config.enable, true)
+  config_enabled = var.config.enable
   create_nat     = var.config.per_az && local.config_enabled
   name_prefix    = coalesce(try(var.config.name, null), var.vpc_id, "nat")
   config_tags    = try(var.config.tags, {})

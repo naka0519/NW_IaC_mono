@@ -8,7 +8,7 @@ variable "public_subnets" {
 variable "config" {
   type = object({
     per_az = bool
-    enable = optional(bool)
+    enable = bool
     name   = optional(string)
     tags   = optional(map(string))
   })
