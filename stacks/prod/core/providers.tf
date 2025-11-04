@@ -7,6 +7,7 @@ provider "aws" {
   # Alternative:
   # assume_role {
   #   role_arn     = "arn:aws:iam::<ACCOUNT_ID>:role/OrganizationAccountAccessRole"
+  #   role_arn     = "arn:aws:iam::${var.core_account_id}:role/${var.core_role_name}"
   #   session_name = "tf-network"
   # }
 

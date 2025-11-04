@@ -1,5 +1,7 @@
 env           = "prod"
 account_alias = "core"
+# core_account_id = "123456789012"      # core アカウント ID
+# core_role_name  = "TerraformNetworkRole"
 
 vpcs = {
   ap-northeast-1 = {

@@ -7,6 +7,16 @@ variable "account_alias" {
   type = string
 }
 
+# core アカウント（組織アカウント）の ID と Role 名を変数化しておく
+variable "core_account_id" {
+  type = string
+}
+
+variable "core_role_name" {
+  type    = string
+  default = "TerraformNetworkRole"
+}
+
 # region -> vpc -> 設定 のマップ
 variable "vpcs" {
   description = "Region -> VPC -> settings"
