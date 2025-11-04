@@ -1,4 +1,7 @@
-variable "name"               { type = string }
+variable "name" {
+  type    = string
+  default = null
+}
 variable "vpc_id"             { type = string }
 variable "igw_id"             { 
     type = string 
