@@ -1,28 +1,22 @@
-// ap-northeast-1 用の region module
-module "network_apne1" {
-  source = "../../../modules/network"
-
-  providers = {
-    aws = aws.apne1
+locals {
+  region_providers = {
+    # リージョン追加ごとにここに追記
+    ap-northeast-1 = aws.apne1
+    ap-northeast-3 = aws.apne3
   }
-
-  env           = var.env
-  account_alias = var.account_alias
-  region        = "ap-northeast-1"
-  vpcs          = lookup(var.vpcs, "ap-northeast-1", {})
 }
 
+module "network" {
+  for_each = var.vpcs
 
-// ap-northeast-3 用の region module
-module "network_apne3" {
   source = "../../../modules/network"
 
   providers = {
-    aws = aws.apne3
+    aws = local.region_providers[each.key]
   }
 
   env           = var.env
   account_alias = var.account_alias
-  region        = "ap-northeast-3"
-  vpcs          = lookup(var.vpcs, "ap-northeast-3", {})
+  region        = each.key
+  vpcs          = each.value
 }

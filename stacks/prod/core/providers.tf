@@ -1,4 +1,4 @@
-
+# リージョンごとにプロバイダーを定義
 provider "aws" {
   alias   = "apne1"
   region  = "ap-northeast-1"
