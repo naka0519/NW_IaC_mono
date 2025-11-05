@@ -38,6 +38,7 @@ variable "vpcs" {
           enable = bool
         })
         nacl = map(any)
+        direct_connect = optional(bool, false)
         tags = map(string)
       })
     )

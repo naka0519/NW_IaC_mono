@@ -12,3 +12,7 @@ variable "tags"                 {
     type = map(string) 
     default = {} 
 }
+variable "prevent_destroy"      {
+    type    = bool
+    default = false
+}

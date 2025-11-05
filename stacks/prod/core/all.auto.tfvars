@@ -22,6 +22,7 @@ vpcs = {
         enable = false
       }
       nacl = {}
+      direct_connect = false # Dejimaの場合はtrueにする
       tags = { Name = "main" }
     }
   }
@@ -43,6 +44,7 @@ vpcs = {
   #         enable = false
   #       }
   #       nacl = {}
+  #       direct_connect = false # Dejimaの場合はtrueにする
   #       tags = { Name = "main" }
   #     }
   #   }

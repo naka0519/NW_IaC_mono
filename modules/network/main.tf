@@ -23,6 +23,7 @@ variable "vpcs" {
       enable = bool
     })
     nacl = map(any)
+    direct_connect = optional(bool, false)
     tags = map(string)
   }))
 }
@@ -37,11 +38,16 @@ module "vpc" {
   source     = "../vpc"
   name       = "${var.env}-${var.account_alias}-${var.region}-vpc-${each.key}"
   cidr_block = each.value.cidr
-  tags = merge(each.value.tags, {
-    Env     = var.env
-    Account = var.account_alias
-    Region  = var.region
-  })
+  tags = merge(
+    each.value.tags,
+    {
+      Env         = var.env
+      Account     = var.account_alias
+      Region      = var.region
+      Connectivity = try(each.value.direct_connect, false) ? "Dejima" : "Ship"
+    }
+  )
+  prevent_destroy = try(each.value.direct_connect, false)
 }
 
 module "subnet" {

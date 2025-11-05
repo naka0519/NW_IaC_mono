@@ -6,4 +6,8 @@ resource "aws_vpc" "this" {
   tags = merge(var.tags, {
     Name = var.name
   })
+
+  lifecycle {
+    prevent_destroy = var.prevent_destroy
+  }
 }
